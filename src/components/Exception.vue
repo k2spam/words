@@ -1,6 +1,5 @@
 <template>
     <div>
-        {{exception}}<br>
         <label v-for="letter in alphabet" :key="letter">
             {{letter}}
             <input v-model="exception" :value="letter" type="checkbox"/>
@@ -9,14 +8,10 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { exception } from '../databus'
 
 export default {
-    props:{
-        exception: {}
-    },
-    setup(props){
-        const exception = ref(props.exception)
+    setup(){        
         const alphabet = [
             'a', 'б', 'в', 'г', 
             'д', 'е', 'ж', 'з', 

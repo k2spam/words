@@ -1,11 +1,12 @@
 <template>
     <div class="words">
+        {{exception}}<br>
         <div class="word" v-for="word in filtered" :key="word">{{word}}</div>
     </div>
 </template>
 
 <script>
-import { ref, watch } from 'vue'
+import { ref, watch, isRef } from 'vue'
 import { wordsFilter } from '@/libs'
 
 export default {
@@ -15,11 +16,13 @@ export default {
         exception: {}
     },
     setup(props){
-        const {mask, data, exception} = props
+        const {mask, data, exception } = props
         const filtered = ref(data)
 
-        watch(props.exception, v => filtered.value = wordsFilter(data, mask, v))
-        watch(props.mask, v => filtered.value = wordsFilter(data, v, exception))
+        watch(
+            [exception, props.mask], 
+            ([_exception, _mask]) => filtered.value = wordsFilter(data, _mask, _exception)
+            )
 
         return {
             mask,
