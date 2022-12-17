@@ -11,9 +11,9 @@
 import { exception } from '../databus'
 
 export default {
-    setup(){        
+    setup(){   
         const alphabet = [
-            'a', 'б', 'в', 'г', 
+            'а', 'б', 'в', 'г', 
             'д', 'е', 'ж', 'з', 
             'и', 'й', 'к', 'л', 
             'м', 'н', 'о', 'п', 

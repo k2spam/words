@@ -13,9 +13,9 @@ import Words from './components/Words.vue'
   </header>
 
   <main>
-    <Exception :exception="exception"/>
+    <Exception/>
     <Letters :count="count" :mask="mask"/>
-    <Words :data="words5" :mask="mask" :exception="exception"/>
+    <Words :data="words5" :mask="mask"/>
   </main>
 </template>
 
