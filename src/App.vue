@@ -31,5 +31,11 @@ html {
     background: $bg_color1;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
+
+  main {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1000px;
+  }
 }
 </style>

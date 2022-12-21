@@ -37,7 +37,10 @@ export default {
 
 .words {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+    width: 580px;
+    margin: 0 auto;
 }
 .word {
     margin: 10px;

@@ -37,6 +37,9 @@ export default {
 
 .letters {
     display: flex;
+    justify-content: center;
+    width: 520px;
+    margin: 30px auto;
 
     .letter {
         width: 30px;
