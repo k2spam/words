@@ -1,14 +1,14 @@
 <template>
-    <div class="exception">
-        <div v-for="letter in alphabet" :key="letter">
-            <input v-model="exception" :value="letter" :id="letter" type="checkbox"/>
-            <label :for="letter">{{letter}} <i>|</i></label>
+    <div class="includes">
+        <div v-for="letter in alphabet" :key="`i${letter}`">
+            <input v-model="includes" :value="letter" :id="`i${letter}`" type="checkbox"/>
+            <label :for="`i${letter}`">{{letter}} <i>&#10004;</i></label>
         </div>
     </div>
 </template>
 
 <script>
-import { exception } from '../databus'
+import { includes } from '../databus'
 
 export default {
     setup(){   
@@ -25,7 +25,7 @@ export default {
 
         return {
             alphabet,
-            exception
+            includes
         }
     }
 }
@@ -34,13 +34,11 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/base.scss';
 
-.exception {
+.includes {
     display: flex;
     width: 520px;
-    margin: 0 auto 15px;
-    padding: 0 0 15px;
+    margin: 0 auto;
     flex-wrap: wrap;
-    border-bottom: 1px solid $border_color1;
 
     div {
         position: relative;
@@ -52,7 +50,7 @@ export default {
     }
 
     input:checked + label{
-        box-shadow: inset 0 0 5px rgba(250, 0, 0, 0.4);
+        box-shadow: inset 0 0 5px rgba(0, 202, 30, 0.4);
         i {
             visibility: visible;
         }
@@ -79,16 +77,14 @@ export default {
         visibility: hidden;
         display: inline-block;
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+        top: -5px;
+        right: 0;
         text-align: center;
-        color: red;
+        color: rgb(0, 202, 30);
         opacity: 0.6;
-        font-size: 27px;
+        font-size: 12px;
         font-style: normal;
         font-weight: bold;
-        transform: rotate(-45deg);
     }
 }
 </style>

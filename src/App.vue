@@ -4,6 +4,7 @@ import words5 from './mocks/words5'
 
 import Letters from './components/Letters.vue'
 import Exception from './components/Exception.vue'
+import Includes from './components/Includes.vue'
 import Words from './components/Words.vue'
 </script>
 
@@ -14,6 +15,7 @@ import Words from './components/Words.vue'
 
   <main>
     <Exception/>
+    <includes/>
     <Letters :count="count" :mask="mask"/>
     <Words :data="words5" :mask="mask"/>
   </main>

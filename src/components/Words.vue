@@ -8,6 +8,7 @@
 import { ref, watch } from 'vue'
 import { wordsFilter } from '@/libs'
 import { exception } from '../databus'
+import { includes } from '../databus'
 
 export default {
     props:{
@@ -19,14 +20,15 @@ export default {
         const filtered = ref(data)
 
         watch(
-            [exception, mask], 
-            ([_exception, _mask]) => filtered.value = wordsFilter(data, _mask, _exception)
+            [exception, includes, mask], 
+            ([_exception, _includes, _mask]) => filtered.value = wordsFilter(data, _mask, _exception, _includes)
             )
 
         return {
             mask,
             filtered,
-            exception
+            exception,
+            includes
         }
     },
 }
